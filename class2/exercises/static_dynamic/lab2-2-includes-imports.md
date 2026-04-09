@@ -83,7 +83,11 @@ Does only Sub-task A execute? Why or why not?
 Still using `include_tasks`, modify `includes_imports2.yml` so that passing
 `--tags tag_a` causes **only** Sub-task A to execute.
 
-> **Hint:** Look up the `apply:` keyword for `include_tasks`.
+> **Hint:** Split `subtask2.yml` into three separate files — one per sub-task.
+> Include each file with its own `tags:` on the `include_tasks` statement.
+> Also add `apply: tags: tag_X` matching the same tag — in Ansible ≥ 2.17,
+> dynamically included tasks are also subject to tag filtering, so inner tasks
+> need the tag injected via `apply:` or they will be skipped.
 
 ---
 

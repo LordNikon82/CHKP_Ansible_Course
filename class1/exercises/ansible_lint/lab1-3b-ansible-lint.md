@@ -8,14 +8,6 @@ early means fewer surprises in production pipelines and code reviews.
 
 ---
 
-## Setup — Install ansible-lint
-
-```bash
-pip3 install ansible-lint
-```
-
----
-
 ## Exercise 1a — First run
 
 Run ansible-lint against your playbook from LAB 1.3a:

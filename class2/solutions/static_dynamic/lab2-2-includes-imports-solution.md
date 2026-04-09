@@ -123,11 +123,30 @@ Running `--tags tag_a` tells Ansible to skip any task that does *not* have
 `tag_a`. Because the `include_tasks` task itself has no tag, Ansible skips it
 entirely — the sub-tasks are never loaded and never run.
 
-### Fix — Step 3: apply the tags to the include itself
+### Fix — Step 3: one include per tag, one file per sub-task, plus `apply:`
 
-Add the `apply:` keyword to propagate the relevant tag down to the
-`include_tasks` task itself, **and** tag the `include_tasks` call so it is
-not skipped:
+Two things are required together:
+
+1. **Separate files** — one sub-task per file. If all three sub-tasks share one
+   file and you add `apply: tags: tag_a`, all of them receive `tag_a` and all run.
+2. **`apply:`** — in ansible-core ≥ 2.17 dynamically-included tasks are
+   also subject to tag filtering. The `include_tasks` statement fires (because it
+   carries `tag_a`), but the tasks *inside* the file have no tags, so Ansible
+   skips them. `apply: tags:` injects the tag into those inner tasks so they run.
+
+Create three single-task files:
+
+**`~/ansible/lab2-2/subtask_a.yml`**
+```yaml
+---
+- name: Sub-task A
+  ansible.builtin.debug:
+    msg: "Sub-task A is running"
+```
+
+**`~/ansible/lab2-2/subtask_b.yml`** / **`subtask_c.yml`** — same pattern.
+
+**`~/ansible/lab2-2/includes_imports2.yml`** (fixed):
 
 ```yaml
 ---
@@ -136,34 +155,37 @@ not skipped:
   gather_facts: false
 
   tasks:
-    - name: Load sub-tasks (tag_a)
+    - name: Run sub-task A
       ansible.builtin.include_tasks:
-        file: subtask2.yml
+        file: subtask_a.yml
         apply:
           tags: tag_a
       tags: tag_a
 
-    - name: Load sub-tasks (tag_b)
+    - name: Run sub-task B
       ansible.builtin.include_tasks:
-        file: subtask2.yml
+        file: subtask_b.yml
         apply:
           tags: tag_b
       tags: tag_b
 
-    - name: Load sub-tasks (tag_c)
+    - name: Run sub-task C
       ansible.builtin.include_tasks:
-        file: subtask2.yml
+        file: subtask_c.yml
         apply:
           tags: tag_c
       tags: tag_c
 ```
 
-> **Note:** `apply:` injects the listed tags onto every task loaded from the
-> included file. The outer `tags:` on the `include_tasks` task ensures the
-> include itself is not skipped by the tag filter.
-
 Running `ansible-playbook includes_imports2.yml --tags tag_a` now executes
-only Sub-task A.
+only Sub-task A — the other two `include_tasks` are skipped (tag mismatch)
+and the tasks inside subtask_a.yml inherit `tag_a` via `apply:` and run.
+
+> **Why separate files AND `apply:` together?**
+> - `apply:` without separate files: all tasks in a shared file get `tag_a` → all run.
+> - Separate files without `apply:`: the include fires but the inner tasks have no
+>   matching tag → they are skipped in Ansible ≥ 2.17.
+> - Both together: only the correct file loads, and the inner task inherits the tag.
 
 ---
 
@@ -173,6 +195,6 @@ only Sub-task A.
 |---------|-------------|
 | `include_tasks` (dynamic) | Resolved at **runtime** — supports variables in the file name and looping |
 | `import_tasks` (static) | Resolved at **parse time** — no runtime variables in the file name; tags work transparently |
-| Tags + `include_tasks` | The include itself must carry the tag; use `apply:` to propagate tags into included tasks |
+| Tags + `include_tasks` | The include must carry the tag AND `apply: tags:` must propagate it into included tasks (Ansible ≥ 2.17 filters inner tasks too); use one file per sub-task so `apply:` doesn't cause all tasks in a shared file to run |
 | Tags + `import_tasks` | Tags on sub-tasks are visible at parse time — `--tags` works without extra configuration |
 | Variable file name | Only possible with `include_tasks`; `import_tasks` will fail at parse time |

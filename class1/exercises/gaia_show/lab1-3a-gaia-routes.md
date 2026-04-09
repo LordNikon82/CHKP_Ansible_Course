@@ -1,18 +1,11 @@
 # LAB 1.3a — Gaia Routes
 
-**Goal:** Connect to the Gaia OS via SSH, retrieve the routing table, and
+**Goal:** Connect to the Gaia OS, retrieve the routing table, and
 extract the default route using `set_fact` and `debug`.
 
 This lab introduces the `check_point.gaia` collection, which talks to
-Gaia over SSH — a different connection method than the Management API (HTTPAPI).
-
----
-
-## Setup — Install the Gaia collection
-
-```bash
-ansible-galaxy collection install check_point.gaia
-```
+the **Gaia REST API** (`/gaia_api/`) — a different API endpoint than the
+Management API (`/web_api/`), even though both use HTTPAPI over port 443.
 
 ---
 
@@ -20,12 +13,14 @@ ansible-galaxy collection install check_point.gaia
 
 Add a `[gaia]` group and its variables to `~/ansible/lab1-1/hosts`.
 
-The `lab_gaia` host reaches the same gateway IP as `lab_mgmt`, but uses SSH
-(port 22) instead of HTTPAPI. The user is `admin`.
+The `lab_gaia` host reaches the same gateway IP as `lab_mgmt`, but connects
+to the Gaia REST API instead of the Management API. The user is `admin`.
 
 > **Tip:** Use a `[gaia:vars]` section. The required variables are:
 > - `ansible_network_os` = `check_point.gaia.checkpoint`
-> - `ansible_connection` = `network_cli`
+> - `ansible_connection` = `httpapi`
+> - `ansible_httpapi_use_ssl` = `true`
+> - `ansible_httpapi_validate_certs` = `false`
 > - `ansible_user` = `admin`
 > - `ansible_password` = your admin password
 
