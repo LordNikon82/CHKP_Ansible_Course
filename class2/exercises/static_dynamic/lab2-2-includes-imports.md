@@ -1,4 +1,4 @@
-# LAB 2.3 — Static vs. Dynamic: include_tasks / import_tasks
+# LAB 2.2 — Static vs. Dynamic: include_tasks / import_tasks
 
 **Goal:** Understand the difference between dynamic (`include_tasks`) and static
 (`import_tasks`) task inclusion — and how that difference affects loops, variables,
@@ -91,4 +91,4 @@ Still using `include_tasks`, modify `includes_imports2.yml` so that passing
 
 ---
 
-*Next: LAB 2.4 — Roles*
+*Next: LAB 2.3 — Roles*

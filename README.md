@@ -1,17 +1,17 @@
 # CheckPoint Firewall Automation with Ansible
 
 Internal training course covering CheckPoint firewall automation using Ansible
-and the `check_point.mgmt` collection.
+and the `check_point.mgmt` and `check_point.gaia` collections.
 
 ## Structure
 
 ```
-class1/
-  exercises/
-    inventory/      Lab 1.1 — INI inventory, groups, variables
-  solutions/
-    inventory/      Trainer reference solutions (spoilers!)
-class2/             (upcoming)
+CHKP_Ansible_Course/
+├── class1/
+│   └── exercises/       Day 1 labs (LAB 1.1 – 1.8)
+├── class2/
+│   └── exercises/       Day 2 labs (LAB 2.1 – 2.4)
+└── solutions/           Trainer reference solutions for all labs
 ```
 
 ## Prerequisites
@@ -22,7 +22,7 @@ class2/             (upcoming)
 ## Collections used
 
 - [`check_point.mgmt`](https://galaxy.ansible.com/ui/repo/published/check_point/mgmt/) — Management API automation
-- [`check_point.gaia`](https://galaxy.ansible.com/ui/repo/published/check_point/gaia/) — Gaia OS (SSH-based)
+- [`check_point.gaia`](https://galaxy.ansible.com/ui/repo/published/check_point/gaia/) — Gaia OS REST API
 
 ## Training environment
 
@@ -34,9 +34,4 @@ Each student has an isolated pod in Azure:
                             │ HTTPAPI (443)
                             ▼
                     [CheckPoint R82 Gateway+Mgmt]
-                            │
-                    ┌───────┴───────┐
-                    ▼               ▼
-               [Lab VM 1]      [Lab VM 2]
-              (nginx)          (nginx)
 ```

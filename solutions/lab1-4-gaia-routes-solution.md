@@ -1,28 +1,4 @@
-# LAB 1.3a — Gaia Routes Solution (Trainer Reference)
-
-> **Do not distribute to students.**
-
----
-
-## Inventory additions (`~/ansible/lab1-1/hosts`)
-
-```ini
-[gaia]
-lab_gaia ansible_host=<CP_PUBLIC_IP>
-
-[gaia:vars]
-ansible_network_os=check_point.gaia.checkpoint
-ansible_connection=httpapi
-ansible_httpapi_use_ssl=true
-ansible_httpapi_validate_certs=false
-ansible_user=admin
-ansible_password=<PASSWORD>
-```
-
-> **Note — collection version change:** `check_point.gaia` ≥ 3.0 uses the Gaia REST API
-> (`/gaia_api/`) over HTTPAPI instead of SSH/network_cli. Both `gaia` and `mgmt` groups now use
-> `httpapi`, but they connect to **different API endpoints** on the same gateway:
-> `/gaia_api/` (Gaia OS) vs `/web_api/` (Management Server).
+# LAB 1.4 — Gaia Routes Solution (Trainer Reference)
 
 ---
 
@@ -38,6 +14,10 @@ ansible_password=<PASSWORD>
     - name: Retrieve routing table from Gaia
       check_point.gaia.cp_gaia_routes_facts:
       register: routes_result
+
+    - name: Print full routes result
+      ansible.builtin.debug:
+        var: routes_result
 
     - name: Extract the route_table list
       ansible.builtin.set_fact:

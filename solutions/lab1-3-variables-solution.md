@@ -1,6 +1,4 @@
-# LAB 1.2b — Variables Solution (Trainer Reference)
-
-> **Do not distribute to students.**
+# LAB 1.3 — Variables Solution (Trainer Reference)
 
 ---
 

@@ -1,6 +1,4 @@
-# LAB 1.3c — Management Network Objects Solution (Trainer Reference)
-
-> **Do not distribute to students.**
+# LAB 1.6 — Management Network Objects Solution (Trainer Reference)
 
 ---
 
@@ -16,6 +14,10 @@
     - name: Retrieve network objects
       check_point.mgmt.cp_mgmt_network_facts:
       register: net_result
+
+    - name: Print full result
+      ansible.builtin.debug:
+        var: net_result
 
     - name: Extract first network object
       ansible.builtin.set_fact:
@@ -34,16 +36,49 @@
 
 ---
 
-## Bonus — loop over all objects
+## Bonus — create objects and loop over all IPv4 objects
+
+Add the following at the top of the task list (before `cp_mgmt_network_facts`),
+plus a handler section:
 
 ```yaml
-    - name: Print all network objects
+  vars:
+    lab_networks:
+      - { name: "Lab Net 1", subnet: "10.10.1.0", mask_length: 24 }
+      - { name: "Lab Net 2", subnet: "10.10.2.0", mask_length: 24 }
+      - { name: "Lab Net 3", subnet: "10.10.3.0", mask_length: 24 }
+
+  handlers:
+    - name: publish
+      check_point.mgmt.cp_mgmt_publish:
+
+  tasks:
+    - name: Create lab network objects
+      check_point.mgmt.cp_mgmt_network:
+        name: "{{ item.name }}"
+        subnet: "{{ item.subnet }}"
+        mask_length: "{{ item.mask_length }}"
+        state: present
+      loop: "{{ lab_networks }}"
+      notify: publish
+
+    # ... existing tasks follow (retrieve, extract, print) ...
+```
+
+Then add the loop task at the end:
+
+```yaml
+    - name: Print all IPv4 network objects
       ansible.builtin.debug:
         msg: "{{ item.name }}  {{ item.subnet4 }}/{{ item['subnet-mask'] }}"
       loop: "{{ net_result.ansible_facts.checkpoint_networks.objects }}"
       loop_control:
         label: "{{ item.name }}"
+      when: item.subnet4 is defined
 ```
+
+> **Why `when: item.subnet4 is defined`:** The gateway includes IPv6-only built-in
+> objects that have no `subnet4` field — accessing it would throw an undefined error.
 
 ---
 

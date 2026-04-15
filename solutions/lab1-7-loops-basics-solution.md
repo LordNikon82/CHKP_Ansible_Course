@@ -1,6 +1,4 @@
-# LAB 2.1a — Loops Basics Solution (Trainer Reference)
-
-> **Do not distribute to students.**
+# LAB 1.7 — Loops Basics Solution (Trainer Reference)
 
 ---
 

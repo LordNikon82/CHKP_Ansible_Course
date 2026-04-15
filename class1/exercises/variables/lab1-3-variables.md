@@ -1,4 +1,4 @@
-# LAB 1.2b — Variables
+# LAB 1.3 — Variables
 
 **Goal:** Understand the different ways Ansible loads variables — inventory
 variables, group_vars, vars_files, and set_fact — using your CheckPoint
@@ -8,7 +8,7 @@ Use the inventory from LAB 1.1 (`~/ansible/lab1-1/hosts`).
 
 ---
 
-## Exercise 1a — Print ansible_facts
+## Exercise 1 — Print ansible_facts
 
 Create `~/ansible/lab1-2/variables.yml` with:
 
@@ -20,7 +20,7 @@ Run it. What do you get? Why is `ansible_facts` empty?
 
 ---
 
-## Exercise 1b — Print inventory variables
+## Exercise 2 — Print inventory variables
 
 Add tasks to print the following variables for `lab_mgmt`:
 
@@ -33,7 +33,7 @@ Add tasks to print the following variables for `lab_mgmt`:
 
 ---
 
-## Exercise 1c — group_vars
+## Exercise 3 — group_vars
 
 Create a directory `~/ansible/lab1-2/group_vars/` and inside it a file
 `all.yml` containing:
@@ -48,7 +48,7 @@ Run it. Where does Ansible look for `group_vars`? Does it find the file?
 
 ---
 
-## Exercise 1d — vars_files and variable precedence
+## Exercise 4 — vars_files and variable precedence
 
 In `~/ansible/lab1-2/`, create a file `my_vars.yml` containing:
 
@@ -65,7 +65,7 @@ Which value wins — `"eth1"` from `group_vars/all.yml` or `"eth3"` from
 
 ---
 
-## Exercise 1e — set_fact
+## Exercise 5 — set_fact
 
 Add a task using `set_fact` to create a new variable:
 
@@ -84,4 +84,4 @@ ok: [lab_mgmt] => {
 
 ---
 
-*Next: LAB 1.3 — Managing CheckPoint objects with Ansible*
+*Next: LAB 1.4 — Gaia Routes*

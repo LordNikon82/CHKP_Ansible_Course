@@ -1,4 +1,4 @@
-# LAB 2.1a — Loops: Basics
+# LAB 1.7 — Loops: Basics
 
 **Goal:** Learn the different ways to loop in Ansible — over simple lists,
 variables, dictionaries, and lists of dictionaries.
@@ -81,4 +81,4 @@ ok: [localhost] => (item= ) => {
 
 ---
 
-*Next: LAB 2.1b — Loops with CheckPoint*
+*Next: LAB 1.8 — Loops with CheckPoint*

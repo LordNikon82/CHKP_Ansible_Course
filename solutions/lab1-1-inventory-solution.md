@@ -1,11 +1,9 @@
 # LAB 1.1 — Solution (Trainer Reference)
-
-> **Do not distribute to students.**
 > Replace `<CP_PUBLIC_IP>` and `<PASSWORD>` with actual values from the handout.
 
 ---
 
-## Exercise 1a — `~/ansible/lab1-1/hosts`
+## Exercise 1 — `~/ansible/lab1-1/hosts`
 
 ```ini
 [all:vars]
@@ -41,7 +39,7 @@ ansible_httpapi_port=443
 
 ---
 
-## Exercise 1b — Add hosts
+## Exercise 2 — Add hosts
 
 ```ini
 [all:vars]
@@ -77,7 +75,7 @@ lab_mgmt ansible_host=<CP_PUBLIC_IP>
 
 ---
 
-## Exercise 1c — Add network OS (group vars sections)
+## Exercise 3 — Add network OS (group vars sections)
 
 ```ini
 [all:vars]
@@ -96,6 +94,7 @@ lab_gaia ansible_host=<CP_PUBLIC_IP>
 
 [gaia:vars]
 ansible_network_os=check_point.gaia.checkpoint
+ansible_connection=httpapi
 
 [mgmt]
 lab_mgmt ansible_host=<CP_PUBLIC_IP>

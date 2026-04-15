@@ -1,6 +1,4 @@
-# LAB 2.1b — Loops with CheckPoint Solution (Trainer Reference)
-
-> **Do not distribute to students.**
+# LAB 1.8 — Loops with CheckPoint Solution (Trainer Reference)
 
 ---
 

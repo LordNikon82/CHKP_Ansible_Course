@@ -1,4 +1,4 @@
-# LAB 2.1b — Loops with CheckPoint: Gateway Interfaces
+# LAB 1.8 — Loops with CheckPoint: Gateway Interfaces
 
 **Goal:** Combine loops with a `when:` conditional to filter data returned
 from the CheckPoint Management API.
@@ -80,4 +80,4 @@ assigned (skip any that have an empty `ipv4-address`).
 
 ---
 
-*Next: LAB 2.2 — Conditionals*
+*End of Day 1 — well done!*

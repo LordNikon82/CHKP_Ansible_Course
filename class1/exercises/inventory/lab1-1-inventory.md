@@ -7,7 +7,7 @@ Your CP Management IP and credentials are in your handout.
 
 ---
 
-## Exercise 1a — Skeleton inventory with variables
+## Exercise 1 — Skeleton inventory with variables
 
 Create the directory and file:
 
@@ -18,7 +18,7 @@ mkdir -p ~/ansible/lab1-1
 Create `~/ansible/lab1-1/hosts` with the following structure:
 
 - An `[all:vars]` section containing:
-  - `ansible_python_interpreter` set to the system Python 3 path
+  - `ansible_python_interpreter` set to `/usr/bin/python3`
   - `ansible_user` set to the CheckPoint admin username
   - `ansible_password` set to your admin password (see handout)
   - `ansible_httpapi_use_ssl = true`
@@ -37,7 +37,7 @@ three groups (empty for now).
 
 ---
 
-## Exercise 1b — Add hosts to groups
+## Exercise 2 — Add hosts to groups
 
 Add one host to each group:
 
@@ -68,7 +68,7 @@ Expected output shape:
 
 ---
 
-## Exercise 1c — Add network OS to groups
+## Exercise 3 — Add network OS to groups
 
 Add a **group variable** (not a host variable) to each network group so
 Ansible knows which connection plugin to use:
@@ -76,6 +76,7 @@ Ansible knows which connection plugin to use:
 | Group  | Variable              | Value                              |
 |--------|-----------------------|------------------------------------|
 | `gaia` | `ansible_network_os`  | `check_point.gaia.checkpoint`      |
+| `gaia` | `ansible_connection`  | `httpapi`                          |
 | `mgmt` | `ansible_network_os`  | `check_point.mgmt.checkpoint`      |
 | `mgmt` | `ansible_connection`  | `httpapi`                          |
 
@@ -107,4 +108,4 @@ You should get back a JSON response listing available Management API versions.
 
 ---
 
-*Next: LAB 1.2 — Your first CheckPoint playbook*
+*Next: LAB 1.2 — Your First Playbook*

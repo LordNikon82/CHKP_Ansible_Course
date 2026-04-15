@@ -1,6 +1,4 @@
-# LAB 2.3 — Static vs. Dynamic Solution (Trainer Reference)
-
-> **Do not distribute to students.**
+# LAB 2.2 — Static vs. Dynamic Solution (Trainer Reference)
 
 ---
 

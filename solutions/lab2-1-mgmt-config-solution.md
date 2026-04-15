@@ -1,6 +1,4 @@
-# LAB 2.2 — Management Configuration Solution (Trainer Reference)
-
-> **Do not distribute to students.**
+# LAB 2.1 — Management Configuration Solution (Trainer Reference)
 
 ---
 

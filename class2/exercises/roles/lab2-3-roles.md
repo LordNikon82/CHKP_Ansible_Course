@@ -1,4 +1,4 @@
-# LAB 2.4 — Roles
+# LAB 2.3 — Roles
 
 **Goal:** Understand how Ansible roles organise tasks, variables, and handlers
 into a reusable, self-contained unit. You will build a role that creates
@@ -134,4 +134,4 @@ Run it and verify that:
 
 ---
 
-*Next: LAB 2.4 — When / Conditionals*
+*Next: LAB 2.4 — Main Project*
