@@ -1,4 +1,4 @@
-# LAB 2.3 — Roles
+# LAB 2.4 — Roles
 
 **Goal:** Understand how Ansible roles organise tasks, variables, and handlers
 into a reusable, self-contained unit. You will build a role that creates
@@ -34,12 +34,12 @@ roles/
 
 ## Exercise 1 — Create the role structure
 
-Create the directory tree above under `~/ansible/lab2-3/roles/`.
+Create the directory tree above under `~/ansible/lab2-4/roles/`.
 
 You can do this manually with `mkdir -p`, or use:
 
 ```bash
-ansible-galaxy init ~/ansible/lab2-3/roles/address_range
+ansible-galaxy init ~/ansible/lab2-4/roles/address_range
 ```
 
 (`ansible-galaxy init` creates the full skeleton — you only need the
@@ -121,7 +121,7 @@ management session when triggered (i.e. when a configuration change occurs).
 
 ## Exercise 5 — Write the top-level playbook
 
-Create `~/ansible/lab2-3/site.yml` that:
+Create `~/ansible/lab2-4/site.yml` that:
 
 - Targets `lab_mgmt`
 - Uses `gather_facts: false`
@@ -134,4 +134,4 @@ Run it and verify that:
 
 ---
 
-*Next: LAB 2.4 — Main Project*
+*Next: LAB 2.5 — Main Project*

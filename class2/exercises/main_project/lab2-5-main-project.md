@@ -1,4 +1,4 @@
-# LAB 2.4 — Main Project (1h)
+# LAB 2.5 — Main Project (1h)
 
 **Goal:** Bring together everything from class 1 and class 2 into a single,
 production-style Ansible project. You will configure Gaia system settings,
@@ -318,3 +318,4 @@ handle this with an explicit `when:` guard).
 ---
 
 *This is the final exercise of Class 2.*
+

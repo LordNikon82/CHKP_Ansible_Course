@@ -1,4 +1,4 @@
-# LAB 2.1 — Management Configuration: Objects & Policy
+# LAB 2.2 — Management Configuration: Objects & Policy
 
 **Goal:** Use Ansible modules to create host objects, network objects, and a
 firewall access rule on the CheckPoint management server. You will use loops,
@@ -166,4 +166,4 @@ and the policy is installed.
 
 ---
 
-*Next: LAB 2.2 — Static vs. Dynamic: include_tasks / import_tasks*
+*Next: LAB 2.3 — Static vs. Dynamic: include_tasks / import_tasks*
