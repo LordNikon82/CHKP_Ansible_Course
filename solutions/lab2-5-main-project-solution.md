@@ -1,4 +1,4 @@
-# LAB 2.4 — Main Project Solution (Trainer Reference)
+# LAB 2.5 — Main Project Solution (Trainer Reference)
 
 ---
 

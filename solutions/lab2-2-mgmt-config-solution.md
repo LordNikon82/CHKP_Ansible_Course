@@ -1,4 +1,4 @@
-# LAB 2.1 — Management Configuration Solution (Trainer Reference)
+# LAB 2.2 — Management Configuration Solution (Trainer Reference)
 
 ---
 
