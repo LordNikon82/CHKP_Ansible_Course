@@ -118,13 +118,18 @@ Module reference:
 ```yaml
 - name: Configure static route
   check_point.gaia.cp_gaia_static_route:
-    destination: "172.31.128.0/21"
+    address: "172.31.128.0"
+    mask_length: 21
     next_hop:
-      - address: "172.31.128.1"
+      - gateway: "172.31.128.1"
         priority: 1
-    interface: "eth1"
+    type: gateway
     state: present
 ```
+
+> **Tip:** Use your pod's default gateway as the `gateway` value (the same IP you
+> discovered in LAB 2.1 Exercise 1). `172.31.128.1` is a placeholder — replace it
+> with your actual default gateway.
 
 ### `tasks/dns.yml`
 
@@ -136,8 +141,9 @@ Module reference:
     primary: "172.31.0.2"
     secondary: "8.8.8.8"
     tertiary: "8.8.4.4"
-    state: present
 ```
+
+> **Note:** `cp_gaia_dns` does not support `state:` — omit it.
 
 **DNS domain name** — use `check_point.mgmt.cp_mgmt_run_script` (via the
 `clish -c "set domainname ..."` command). To make this task **idempotent**:

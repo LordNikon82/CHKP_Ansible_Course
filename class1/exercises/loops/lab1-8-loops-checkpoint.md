@@ -80,4 +80,13 @@ assigned (skip any that have an empty `ipv4-address`).
 
 ---
 
+---
+
+> **Reference solution available:** A working reference (with your gateway name
+> pre-filled) has been deployed to `~/ansible/lab1-8/loops_checkpoint_ref.yml`.
+> If you need a starting point:
+> ```bash
+> cp ~/ansible/lab1-8/loops_checkpoint_ref.yml ~/ansible/lab1-8/loops_checkpoint.yml
+> ```
+
 *End of Day 1 — well done!*

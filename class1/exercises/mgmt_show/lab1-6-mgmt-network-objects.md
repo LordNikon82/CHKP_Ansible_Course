@@ -88,4 +88,12 @@ task that prints the name and subnet of **every IPv4 object** in the list.
 
 ---
 
+---
+
+> **Reference solution available:** A working reference has been deployed to
+> `~/ansible/lab1-6/mgmt_net_objects_ref.yml`. If you need a starting point:
+> ```bash
+> cp ~/ansible/lab1-6/mgmt_net_objects_ref.yml ~/ansible/lab1-6/mgmt_net_objects.yml
+> ```
+
 *Next: LAB 1.7 — Loops: Basics*

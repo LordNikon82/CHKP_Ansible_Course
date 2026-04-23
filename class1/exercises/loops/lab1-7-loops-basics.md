@@ -81,4 +81,12 @@ ok: [localhost] => (item= ) => {
 
 ---
 
+---
+
+> **Reference solution available:** A working reference has been deployed to
+> `~/ansible/lab1-7/loops_basics_ref.yml`. If you need a starting point:
+> ```bash
+> cp ~/ansible/lab1-7/loops_basics_ref.yml ~/ansible/lab1-7/loops_basics.yml
+> ```
+
 *Next: LAB 1.8 — Loops with CheckPoint*

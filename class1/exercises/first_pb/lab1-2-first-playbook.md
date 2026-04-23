@@ -47,4 +47,12 @@ What changes in the output? Why does this matter when working with network devic
 
 ---
 
+---
+
+> **Reference solution available:** A working reference has been deployed to
+> `~/ansible/lab1-2/first_pb_ref.yml`. If you need a starting point:
+> ```bash
+> cp ~/ansible/lab1-2/first_pb_ref.yml ~/ansible/lab1-2/first_pb.yml
+> ```
+
 *Next: LAB 1.3 — Variables*
