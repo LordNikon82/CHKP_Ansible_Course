@@ -12,7 +12,7 @@ Use the inventory from LAB 1.1 (`~/ansible/lab1-1/hosts`).
 
 ## Exercise 1 — Retrieve network objects
 
-Create `~/ansible/lab1-3/mgmt_net_objects.yml`:
+Create `~/ansible/lab1-6/mgmt_net_objects.yml`:
 
 - Play targeting `mgmt`, `gather_facts: false`
 - Task using `check_point.mgmt.cp_mgmt_network_facts` to retrieve all

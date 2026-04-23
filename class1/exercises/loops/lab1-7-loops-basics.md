@@ -5,7 +5,7 @@ variables, dictionaries, and lists of dictionaries.
 
 All tasks in this lab run against `localhost` — no CheckPoint connection needed.
 
-Create `~/ansible/lab2-1/loops_basics.yml` for all exercises below.
+Create `~/ansible/lab1-7/loops_basics.yml` for all exercises below.
 
 ---
 

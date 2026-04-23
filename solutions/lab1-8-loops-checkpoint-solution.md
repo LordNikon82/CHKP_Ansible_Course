@@ -15,7 +15,7 @@ Tell students to look for the `name` field in the returned list.
 
 ---
 
-## Complete playbook — `~/ansible/lab2-1/loops_checkpoint.yml`
+## Complete playbook — `~/ansible/lab1-8/loops_checkpoint.yml`
 
 ```yaml
 ---

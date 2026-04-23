@@ -5,7 +5,7 @@
 ## Directory layout
 
 ```
-~/ansible/lab1-2/
+~/ansible/lab1-3/
   variables.yml
   my_vars.yml
   group_vars/

@@ -5,7 +5,7 @@
 ## Directory structure
 
 ```
-~/ansible/lab2-3/
+~/ansible/lab2-4/
 ├── site.yml
 └── roles/
     └── address_range/

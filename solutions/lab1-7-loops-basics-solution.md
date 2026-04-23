@@ -2,7 +2,7 @@
 
 ---
 
-## Complete playbook — `~/ansible/lab2-1/loops_basics.yml`
+## Complete playbook — `~/ansible/lab1-7/loops_basics.yml`
 
 ```yaml
 ---

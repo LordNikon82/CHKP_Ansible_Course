@@ -2,7 +2,7 @@
 
 ---
 
-## Complete playbook — `~/ansible/lab1-3/mgmt_net_objects.yml`
+## Complete playbook — `~/ansible/lab1-6/mgmt_net_objects.yml`
 
 ```yaml
 ---

@@ -13,7 +13,7 @@ Use the inventory from LAB 1.1 (`~/ansible/lab1-1/hosts`).
 ## Exercise 1 — First run
 
 Instead of using your own playbook from LAB 1.4, use the faulty version below.
-Save it as `~/ansible/lab1-3/gaia_routes_lint.yml`:
+Save it as `~/ansible/lab1-5/gaia_routes_lint.yml`:
 
 ```yaml
 ---
@@ -86,7 +86,7 @@ Run the corrected playbook to confirm it still produces the same result
 as before linting:
 
 ```bash
-ansible-playbook -i ~/ansible/lab1-1/hosts ~/ansible/lab1-3/gaia_routes_lint.yml
+ansible-playbook -i ~/ansible/lab1-1/hosts ~/ansible/lab1-5/gaia_routes_lint.yml
 ```
 
 ---

@@ -4,7 +4,7 @@
 
 ## Exercise 1 — include_tasks with a loop
 
-**`~/ansible/lab2-2/subtask1.yml`**
+**`~/ansible/lab2-3/subtask1.yml`**
 
 ```yaml
 ---
@@ -13,7 +13,7 @@
     msg: "Processing IP: {{ item }}"
 ```
 
-**`~/ansible/lab2-2/includes_imports1.yml`**
+**`~/ansible/lab2-3/includes_imports1.yml`**
 
 ```yaml
 ---
@@ -45,7 +45,7 @@ ok: [localhost] => {
 
 ## Exercise 2 — Variable-driven task file name
 
-**`~/ansible/lab2-2/host_vars/localhost.yml`**
+**`~/ansible/lab2-3/host_vars/localhost.yml`**
 
 ```yaml
 subtasks_file: "subtask1.yml"
@@ -77,7 +77,7 @@ file name would cause a parse error.
 
 ## Exercise 3 — Tags with include_tasks
 
-**`~/ansible/lab2-2/subtask2.yml`**
+**`~/ansible/lab2-3/subtask2.yml`**
 
 ```yaml
 ---
@@ -97,7 +97,7 @@ file name would cause a parse error.
   tags: tag_c
 ```
 
-**`~/ansible/lab2-2/includes_imports2.yml`** (initial version):
+**`~/ansible/lab2-3/includes_imports2.yml`** (initial version):
 
 ```yaml
 ---
@@ -134,7 +134,7 @@ Two things are required together:
 
 Create three single-task files:
 
-**`~/ansible/lab2-2/subtask_a.yml`**
+**`~/ansible/lab2-3/subtask_a.yml`**
 ```yaml
 ---
 - name: Sub-task A
@@ -142,9 +142,9 @@ Create three single-task files:
     msg: "Sub-task A is running"
 ```
 
-**`~/ansible/lab2-2/subtask_b.yml`** / **`subtask_c.yml`** — same pattern.
+**`~/ansible/lab2-3/subtask_b.yml`** / **`subtask_c.yml`** — same pattern.
 
-**`~/ansible/lab2-2/includes_imports2.yml`** (fixed):
+**`~/ansible/lab2-3/includes_imports2.yml`** (fixed):
 
 ```yaml
 ---

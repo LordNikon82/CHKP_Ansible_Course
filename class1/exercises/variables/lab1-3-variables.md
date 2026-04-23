@@ -10,7 +10,7 @@ Use the inventory from LAB 1.1 (`~/ansible/lab1-1/hosts`).
 
 ## Exercise 1 — Print ansible_facts
 
-Create `~/ansible/lab1-2/variables.yml` with:
+Create `~/ansible/lab1-3/variables.yml` with:
 
 - A play targeting `lab_mgmt`
 - `gather_facts: false`
@@ -35,7 +35,7 @@ Add tasks to print the following variables for `lab_mgmt`:
 
 ## Exercise 3 — group_vars
 
-Create a directory `~/ansible/lab1-2/group_vars/` and inside it a file
+Create a directory `~/ansible/lab1-3/group_vars/` and inside it a file
 `all.yml` containing:
 
 ```yaml
@@ -50,7 +50,7 @@ Run it. Where does Ansible look for `group_vars`? Does it find the file?
 
 ## Exercise 4 — vars_files and variable precedence
 
-In `~/ansible/lab1-2/`, create a file `my_vars.yml` containing:
+In `~/ansible/lab1-3/`, create a file `my_vars.yml` containing:
 
 ```yaml
 cp_external_interface: "eth3"

@@ -5,7 +5,7 @@ from the CheckPoint Management API.
 
 Use your inventory from LAB 1.1 (`~/ansible/lab1-1/hosts`).
 
-Create `~/ansible/lab2-1/loops_checkpoint.yml`.
+Create `~/ansible/lab1-8/loops_checkpoint.yml`.
 
 ---
 
