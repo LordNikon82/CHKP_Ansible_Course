@@ -6,6 +6,9 @@
 Use the inventory from LAB 1.1 (`~/ansible/lab1-1/hosts`). All playbooks
 target the `gaia` host group.
 
+> **Missing inventory?** It was restored as part of the Day 2 preparation.
+> Verify with: `ansible-inventory -i ~/ansible/lab1-1/hosts --graph`
+
 Create a working directory `~/ansible/lab2-1/` for all files in this lab.
 
 ---

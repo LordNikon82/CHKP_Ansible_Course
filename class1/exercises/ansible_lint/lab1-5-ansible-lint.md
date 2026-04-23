@@ -91,12 +91,4 @@ ansible-playbook -i ~/ansible/lab1-1/hosts ~/ansible/lab1-5/gaia_routes_lint.yml
 
 ---
 
----
-
-> **Reference solution available:** A lint-clean reference has been deployed to
-> `~/ansible/lab1-5/gaia_routes_lint_ref.yml`. If you need the fixed version:
-> ```bash
-> cp ~/ansible/lab1-5/gaia_routes_lint_ref.yml ~/ansible/lab1-5/gaia_routes_lint.yml
-> ```
-
 *Next: LAB 1.6 — Management API: Network Objects*

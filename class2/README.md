@@ -1,5 +1,17 @@
 # Class 2 — Exercises
 
+> **Class 1 reference solutions** have been deployed to your workspace as `*_ref.yml`
+> files in each lab directory (`lab1-2` through `lab1-8`). If you missed an exercise
+> or need a working starting point, copy the reference:
+> ```bash
+> cp ~/ansible/lab1-4/gaia_routes_ref.yml ~/ansible/lab1-4/gaia_routes.yml
+> ```
+> All labs in Class 2 assume the inventory from LAB 1.1 is in place.
+> If `~/ansible/lab1-1/hosts` is missing, it was also restored for you — check with
+> `ansible-inventory -i ~/ansible/lab1-1/hosts --graph`.
+
+---
+
 ## Module 1: Gaia Configuration
 
 | Lab | Topic |

@@ -84,12 +84,4 @@ ok: [lab_mgmt] => {
 
 ---
 
----
-
-> **Reference solution available:** A working reference has been deployed to
-> `~/ansible/lab1-3/variables_ref.yml` (with vars already inline). If you need a starting point:
-> ```bash
-> cp ~/ansible/lab1-3/variables_ref.yml ~/ansible/lab1-3/variables.yml
-> ```
-
 *Next: LAB 1.4 — Gaia Routes*
